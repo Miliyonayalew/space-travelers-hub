@@ -16,7 +16,7 @@ body {
   display: flex;
 }
 
-.navBar{
+.navBar {
   justify-content: space-between;
   padding: 1rem 2rem;
   border-bottom: 1px solid black;
@@ -27,10 +27,6 @@ body {
   list-style: none;
 }
 
-.menuNav ul li {
-
-}
-
-.active-link{
+.active-link {
   text-decoration: none;
 }
