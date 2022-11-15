@@ -21,9 +21,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navBar">
-      <h1 className="navBar__title">Space Travelers&apos; Hub</h1>
-      <ul className="menuNav">
+    <nav className="navBar d-flex">
+      <div className="logo">
+        <h1 className="navBar__title">Space Travelers&apos; Hub</h1>
+      </div>
+      <ul className="menuNav d-flex">
         {links.map((link) => (
           <li key={link.id}>
             <NavLink
