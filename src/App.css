@@ -50,8 +50,8 @@ body {
   font-size: 1.2rem;
 }
 
-.menuNav li:last-child{
-  border-left: 2px solid ;
+.menuNav li:last-child {
+  border-left: 2px solid;
   padding: 0 1.5rem;
 }
 
@@ -110,4 +110,3 @@ body {
   width: 10rem;
   cursor: pointer;
 }
-
