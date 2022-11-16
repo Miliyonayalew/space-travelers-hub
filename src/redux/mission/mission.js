@@ -1,6 +1,8 @@
 const FETCH_MISSIONS = 'FETCH_DATA_MISSIONS';
 const FETCH_MISSIONS_SUCCESS = 'FETCH_MISSIONS_SUCCESS';
 const FETCH_MISSIONS_FAILURE = 'FETCH_MISSIONS_FAILURE';
+const RESERVE_MISSION = 'RESERVE_MISSION';
+const CANCEL_MISSION = 'CANCEL_MISSION';
 
 const initialState = [];
 
@@ -16,6 +18,16 @@ const fetchMissionsFailure = (payload) => ({
   payload,
 });
 
+const reserveMission = (payload) => ({
+  type: RESERVE_MISSION,
+  payload,
+});
+
+const cancelMission = (payload) => ({
+  type: CANCEL_MISSION,
+  payload,
+});
+
 const fetchMissionsThunk = () => async (dispatch) => {
   dispatch(fetchMissions());
   try {
@@ -27,6 +39,7 @@ const fetchMissionsThunk = () => async (dispatch) => {
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
+        status: false,
       });
     });
     dispatch(fetchMissionsSuccess(missions));
@@ -43,11 +56,31 @@ const missionsReducer = (state = initialState, action) => {
       return { ...state, loading: false, missions: action.payload };
     case FETCH_MISSIONS_FAILURE:
       return { ...state, loading: false, error: action.payload };
+    case RESERVE_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id === action.payload) {
+            return { ...mission, status: true };
+          }
+          return mission;
+        }),
+      };
+    case CANCEL_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id === action.payload) {
+            return { ...mission, status: false };
+          }
+          return mission;
+        }),
+      };
     default:
       return state;
   }
 };
 
-export { fetchMissionsThunk };
+export { fetchMissionsThunk, reserveMission, cancelMission };
 
 export default missionsReducer;
