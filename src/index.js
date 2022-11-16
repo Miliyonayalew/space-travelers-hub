@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './App.css';
 import Navbar from './component/Navbar';
-import Mission from './component/Mission';
+import Mission from './component/Missions';
 import Rockets from './component/Rockets';
 import Profile from './component/Profile';
 import store from './redux/configStore';
