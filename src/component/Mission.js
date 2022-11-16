@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Mission = ({ mission }) => (
-  <div className="mission">
+  <div className="missions">
     <h3 className="mission-name">{mission.mission_name}</h3>
     <p className="mission-description">{mission.description}</p>
   </div>
