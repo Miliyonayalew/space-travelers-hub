@@ -13,7 +13,7 @@ const Missions = () => {
           <span className="mission-titles">Status</span>
         </li>
         {missions?.map((mission) => (
-          <Mission key={mission.id} mission={mission} />
+          <Mission key={mission.mission_id} mission={mission} />
         ))}
       </ul>
     </div>
