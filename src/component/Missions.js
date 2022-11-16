@@ -6,11 +6,11 @@ const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer.missions);
   return (
     <div>
-      <ul className="missions">
-        <li className="mission-title">
-          <span className="table-header">Mission</span>
-          <span className="table-header">Description</span>
-          <span className="table-header">Status</span>
+      <ul>
+        <li className="missions">
+          <span className="mission-titles">Mission</span>
+          <span className="mission-titles">Description</span>
+          <span className="mission-titles">Status</span>
         </li>
         {missions?.map((mission) => (
           <Mission key={mission.id} mission={mission} />
