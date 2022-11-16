@@ -1,6 +1,8 @@
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
 const FETCH_ROCKETS_SUCCESS = 'FETCH_ROCKETS_SUCCESS';
 const FETCH_ROCKETS_FAILURE = 'FETCH_ROCKETS_FAILURE';
+const RESERVE_ROCKET = 'RESERVE_ROCKET';
+const CANCEL_ROCKET = 'CANCEL_ROCKET';
 
 const initialState = [];
 
@@ -13,6 +15,16 @@ const fetchRocketsSuccess = (payload) => ({
 
 const fetchRocketsFailure = (payload) => ({
   type: FETCH_ROCKETS_FAILURE,
+  payload,
+});
+
+const reserveRocket = (payload) => ({
+  type: RESERVE_ROCKET,
+  payload,
+});
+
+const cancelRocket = (payload) => ({
+  type: CANCEL_ROCKET,
   payload,
 });
 
@@ -45,11 +57,31 @@ const rocketsReducer = (state = initialState, action) => {
       return { ...state, loading: false, rockets: action.payload };
     case FETCH_ROCKETS_FAILURE:
       return { ...state, loading: false, error: action.payload };
+    case RESERVE_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id === action.payload) {
+            return { ...rocket, reserved: true };
+          }
+          return rocket;
+        }),
+      };
+    case CANCEL_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id === action.payload) {
+            return { ...rocket, reserved: false };
+          }
+          return rocket;
+        }),
+      };
     default:
       return state;
   }
 };
 
-export { fetchRocketsThunk };
+export { fetchRocketsThunk, reserveRocket, cancelRocket };
 
 export default rocketsReducer;
