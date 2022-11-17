@@ -131,8 +131,8 @@ To run tests, run the following command:
 👤 **STANLEY TOCHUKWU**
 
 - GitHub: [@Enekwestanley](https://github.com/Enekwestanley)
-- Twitter: [@Enekwestanley](https://twitter.com/Enekwestanley)
-- LinkedIn: [@Enekwestanley](https://www.linkedin.com/in/stanley-tochukwu-9733b942/)
+- Twitter: [@Enekwestanley](https://twitter.com/Tochukwu87)
+- LinkedIn: [@Enekwestanley](https://www.linkedin.com/in/stanley-enekwe-285104230/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
