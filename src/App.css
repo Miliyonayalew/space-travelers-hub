@@ -228,6 +228,17 @@ body {
   border-color: #ee3030;
 }
 
+.leave-mission {
+  background-color: white;
+  color: #ee3030;
+  border-color: #ee3030;
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  line-height: normal;
+  cursor: pointer;
+}
+
 /* Path: Module 3\space-travelers-hub\src\components\Profile.css */
 
 .container {
@@ -254,6 +265,7 @@ body {
 
 .reserved-item {
   align-items: center;
+  justify-content: space-between;
   padding: 0.7rem 1rem 1.2rem;
   border-bottom: solid 1px #e8e8e8;
 }
