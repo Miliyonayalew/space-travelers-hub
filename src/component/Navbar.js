@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assests/logo.png';
 
 const Navbar = () => {
   const links = [
@@ -22,7 +23,8 @@ const Navbar = () => {
 
   return (
     <nav className="navBar d-flex">
-      <div className="logo">
+      <div className="logo d-flex">
+        <img src={logo} alt="logo" />
         <h1 className="navBar__title">Space Travelers&apos; Hub</h1>
       </div>
       <ul className="menuNav d-flex">

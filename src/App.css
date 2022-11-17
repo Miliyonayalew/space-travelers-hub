@@ -16,14 +16,24 @@ body {
   display: flex;
 }
 
+.d-grid {
+  display: grid;
+}
+
 /* Path: Module 3\space-travelers-hub\src\components\Navbar.css */
 .navBar {
   justify-content: space-between;
   align-items: center;
   margin: 0.2rem 1.5rem 0;
-  padding: 2rem 1.188rem 0.625rem 1.688rem;
-  border-bottom: 1px solid black;
+  padding: 2rem 1.6rem 1.5rem 1.6rem;
+  border-bottom: 2px solid rgb(155, 149, 149);
   margin-bottom: 2rem;
+}
+
+.logo img {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 0.8rem;
 }
 
 .menuNav {
@@ -35,7 +45,7 @@ body {
 
 .menuNav a {
   text-decoration: none;
-  color: black;
+  color: #0290ff;
 }
 
 .menuNav a:hover {
@@ -52,7 +62,7 @@ body {
 }
 
 .menuNav li:last-child {
-  border-left: 2px solid;
+  border-left: 2px solid #978d8d;
   padding: 0 1.5rem;
 }
 
@@ -69,7 +79,6 @@ body {
 /* Path: Module 3\space-travelers-hub\src\components\Rocket.css */
 
 .rocket {
-  display: flex;
   justify-content: center;
   gap: 1rem;
   padding: 1rem 3rem;
@@ -84,10 +93,10 @@ body {
 .rocket img {
   width: 20%;
   height: 20%;
+  border-radius: 0.5rem;
 }
 
 .rocket-info {
-  display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding-left: 1rem;
@@ -98,14 +107,22 @@ body {
   font-weight: bold;
 }
 
+.rocket-description {
+  font-size: 1rem;
+  color: #979797;
+  line-height: 1.6em;
+}
+
 .reserved {
   background-color: green;
   color: #fff;
   font-size: 12px;
   height: max-content;
+  width: fit-content;
   border-radius: 5px;
   border: none;
-  padding: 0.3rem;
+  padding: 0.3rem 0.4rem;
+  white-space: normal;
 }
 
 .cancel,
@@ -116,7 +133,7 @@ body {
   font-size: 1rem;
   line-height: normal;
   font-weight: bold;
-  width: 10rem;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -130,55 +147,195 @@ body {
   color: white;
 }
 
-/* Path: Module 3\space-travelers-hub\src\components\RocketDetails.css */
-
 /* Path: Module 3\space-travelers-hub\src\components\Missions.css */
-.missions {
-  display: grid;
-  grid-template-columns: 15% 55% 30%;
-  justify-content: center;
-  height: max-content;
+.mission-container {
   margin: 0.213rem 4.25rem 0;
-  padding: 2rem 1.188rem 0.625rem 1.688rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
+}
+
+.missions {
+  grid-template-columns: 15% 55% 30%;
+  justify-content: center;
+}
+
+.missions:nth-child(even) {
+  background-color: #f5f5f5;
 }
 
 .mission-titles {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  border: solid 1px #e8e8e8;
+  padding: 1rem 0.5rem 0.5rem;
 }
 
 .mission-name {
   font-size: 1.5rem;
   font-weight: bold;
+  padding: 1rem 0.5rem 0.5rem;
+  border-right: solid 1px #e8e8e8;
+}
+
+.mission-description {
+  padding: 1rem 0.5rem 0.5rem;
+  border-right: solid 1px #e8e8e8;
+}
+
+.mission-status {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: max-content;
+  gap: 2rem;
+  padding: 1rem 0.5rem 0.5rem;
+  border-right: solid 1px #e8e8e8;
+}
+
+.active-member {
+  background-color: #0290ff;
+}
+
+.not-member {
+  background-color: #979797;
+}
+
+.active-member,
+.not-member {
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  line-height: normal;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.leave-button,
+.join-button {
+  background-color: #e8e8e8;
+  color: #979797;
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.leave-button {
+  background-color: white;
+  color: #ee3030;
+  border-color: #ee3030;
+}
+
+/* Path: Module 3\space-travelers-hub\src\components\Profile.css */
+
+.container {
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+}
+
+.profile-title-mission,
+.profile-title-rocket {
+  font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
-/*
-.mission {
-  display: grid;
-  grid-template-columns: 15% 55% 30%;
-  justify-content: center;
-  height: max-content;
-  margin: 0.213rem 4.25rem 0;
-  padding: 2rem 1.188rem 0.625rem 1.688rem;
-  border-radius: 4px;
+.reserved-list-mission,
+.reserved-list-rocket {
+  list-style: none;
+  flex-direction: column;
+  border-radius: 5px;
   border: solid 1px #e8e8e8;
-  background-color: #83b8ba;
 }
 
-.mission-title {
-  display: grid;
-  grid-template-columns: 15% 55% 30%;
-  justify-content: center;
-  height: max-content;
-  margin: 0.213rem 4.25rem 0;
-  padding: 2rem 1.188rem 0.625rem 1.688rem;
-  border-radius: 4px;
-  border: solid 1px #e8e8e8;
-  background-color: #83b8ba;
+.reserved-item {
+  align-items: center;
+  padding: 0.7rem 1rem 1.2rem;
+  border-bottom: solid 1px #e8e8e8;
 }
 
- */
+@media All and (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .menuNav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .menuNav li:last-child {
+    border-left: none;
+    padding: 0;
+  }
+
+  .menuNav a {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .rocket {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+
+  .rocket img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rocket-info {
+    padding-left: 0;
+  }
+
+  /* Path: Module 3\space-travelers-hub\src\components\Missions.css */
+
+  .mission-container {
+    margin: 0.213rem 1.25rem 0;
+  }
+
+  .missions {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .mission-titles {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: solid 1px #e8e8e8;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+
+  .mission-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 0.5rem 0.5rem;
+    border-right: solid 1px #e8e8e8;
+  }
+
+  .mission-description {
+    padding: 1rem 0.5rem 0.5rem;
+    border-right: solid 1px #e8e8e8;
+  }
+
+  .mission-status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: max-content;
+    gap: 2rem;
+    padding: 1rem 0.5rem 0.5rem;
+    border-right: solid 1px #e8e8e8;
+  }
+}

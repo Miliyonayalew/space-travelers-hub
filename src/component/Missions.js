@@ -6,8 +6,8 @@ const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer.missions);
   return (
     <div>
-      <ul>
-        <li className="missions">
+      <ul className="mission-container">
+        <li className="missions d-grid">
           <span className="mission-titles">Mission</span>
           <span className="mission-titles">Description</span>
           <span className="mission-titles">Status</span>

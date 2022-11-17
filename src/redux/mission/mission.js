@@ -1,8 +1,8 @@
 const FETCH_MISSIONS = 'FETCH_DATA_MISSIONS';
 const FETCH_MISSIONS_SUCCESS = 'FETCH_MISSIONS_SUCCESS';
 const FETCH_MISSIONS_FAILURE = 'FETCH_MISSIONS_FAILURE';
-const RESERVE_MISSION = 'RESERVE_MISSION';
-const CANCEL_MISSION = 'CANCEL_MISSION';
+const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
 
 const initialState = [];
 
@@ -19,12 +19,12 @@ const fetchMissionsFailure = (payload) => ({
 });
 
 const reserveMission = (payload) => ({
-  type: RESERVE_MISSION,
+  type: JOIN_MISSION,
   payload,
 });
 
 const cancelMission = (payload) => ({
-  type: CANCEL_MISSION,
+  type: LEAVE_MISSION,
   payload,
 });
 
@@ -56,7 +56,7 @@ const missionsReducer = (state = initialState, action) => {
       return { ...state, loading: false, missions: action.payload };
     case FETCH_MISSIONS_FAILURE:
       return { ...state, loading: false, error: action.payload };
-    case RESERVE_MISSION:
+    case JOIN_MISSION:
       return {
         ...state,
         missions: state.missions.map((mission) => {
@@ -66,7 +66,7 @@ const missionsReducer = (state = initialState, action) => {
           return mission;
         }),
       };
-    case CANCEL_MISSION:
+    case LEAVE_MISSION:
       return {
         ...state,
         missions: state.missions.map((mission) => {

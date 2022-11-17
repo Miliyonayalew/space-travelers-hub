@@ -15,15 +15,15 @@ const Rocket = ({ rocket }) => {
   };
 
   return (
-    <li key={rocket.id} className="rocket">
+    <li key={rocket.id} className="rocket d-flex">
       <img src={rocket.image} alt={rocket.name} />
-      <div className="rocket-info">
-        <h3 className="rocket-name">{rocket.name}</h3>
-        <div className="rocket-description d-flex">
+      <div className="rocket-info d-flex">
+        <span className="rocket-name">{rocket.name}</span>
+        <div className="rocket-description">
           {rocket.reserved ? (
-            <h2 className={rocket.reserved ? 'reserved' : ''}>
+            <span className={rocket.reserved ? 'reserved' : ''}>
               Reserved
-            </h2>
+            </span>
           ) : (
             ''
           )}

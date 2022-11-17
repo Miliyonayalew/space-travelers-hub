@@ -14,10 +14,10 @@ const Mission = ({ mission }) => {
   };
   return (
 
-    <div className="missions">
+    <div className="missions d-grid">
       <h3 className="mission-name">{mission.mission_name}</h3>
       <p className="mission-description">{mission.description}</p>
-      <div className="mission-status">
+      <div className="mission-status d-flex">
         <button
           type="button"
           className={mission.status ? 'active-member' : 'not-member'}
