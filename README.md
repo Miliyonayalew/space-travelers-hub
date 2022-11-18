@@ -45,6 +45,13 @@
 - Linters
 - GitFlow
 - Redux
+  
+<img src="src/assests/mock.png" alt="logo"   height="auto" />
+
+</br>
+
+![](src/assests/view.gif)
+[Back to top](#readme-top)
 
 ### Tech Stack <a name="tech-stack"></a>
 

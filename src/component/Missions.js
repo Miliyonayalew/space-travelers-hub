@@ -1,9 +1,20 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Mission from './Mission';
+import { fetchMissionsThunk } from '../redux/mission/mission';
 
+let didInit = false;
 const Missions = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!didInit) {
+      dispatch(fetchMissionsThunk());
+      didInit = true;
+    }
+  }, [dispatch]);
+
   const missions = useSelector((state) => state.missionsReducer.missions);
+
   return (
     <div>
       <ul className="mission-container">

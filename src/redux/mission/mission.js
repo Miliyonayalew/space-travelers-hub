@@ -81,6 +81,8 @@ const missionsReducer = (state = initialState, action) => {
   }
 };
 
+export const allMissions = (state) => state.missionsReducer.missions;
+
 export { fetchMissionsThunk, reserveMission, cancelMission };
 
 export default missionsReducer;
